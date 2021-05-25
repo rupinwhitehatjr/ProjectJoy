@@ -22,14 +22,14 @@
 <script>
   // Your web app's Firebase configuration
    var firebaseConfig = {
-    apiKey: "AIzaSyDKEEwYE0xq_Pb4RXyEjxQR_XnNS04kMgY",
-    authDomain: "renamingfilesforquiz.firebaseapp.com",
-    databaseURL: "https://renamingfilesforquiz.firebaseio.com",
-    projectId: "renamingfilesforquiz",
-    storageBucket: "renamingfilesforquiz.appspot.com",
-    messagingSenderId: "770560109780",
-    appId: "1:770560109780:web:b1df2f0b63dd95f0885f41"
-  }
+    apiKey: "AIzaSyAS-bxLqClb2hfL4OMhf2k8E2-JLaTsqQk",
+    authDomain: "quizauthoring.firebaseapp.com",
+    projectId: "quizauthoring",
+    storageBucket: "quizauthoring.appspot.com",
+    messagingSenderId: "982812680238",
+    appId: "1:982812680238:web:16486cc3b807982f547fbf"
+  };
+
 
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
@@ -57,9 +57,9 @@
 <div class="clear"></div> 
 
 <div class="container_12">
-  <h2>
-    Question Number&nbsp;<span id="QuestionNumber"></span> of C<span id="class"></span> in <span id="curriculum"></span>
-  </h2>
+  <!-- <h2>
+    Question Number&nbsp;<span id="QuestionNumber"></span> of Day <span id="day"></span> in <span id="curriculum"></span>
+  </h2> -->
 </div>
 <div class="clear"></div> 
 
@@ -98,7 +98,7 @@
      </p>
     </div>
 
-    <div class="centeredimage" id='radio1'>
+    <div class="centeredimage" id='radio1' >
      <p class="instructions" id="option2label">Right option?
       <input type="radio" name="rightanswer"></input>
      </p>
@@ -132,6 +132,12 @@
   <!-- end .grid_12 -->
   <div class="clear"></div>
 
+
+  <div class="container_12" style="background-color: #cccccc" >
+    &nbsp;
+  </div>  
+
+<div class="clear"></div>
   <div class="container_12">
 
 <div class="grid_6">
@@ -186,35 +192,29 @@
   <!-- end .grid_12 -->
   <div class="clear"></div>
 
-  <div class="grid_12">
-    <p>
-      <b>Answer Option:</b> #AnswerOption
-    </p>
-  </div>
-  <!-- end .grid_12 -->
-  <div class="clear"></div>
+  
 
    
 
  
   <!-- end .grid_12 -->
   <div class="clear"></div>
-
-  <div class="grid_2 centeredimage">
-    <a class='button' id="prevButton" href='javascript:goToPrev()'>Previous</a>
-    &nbsp;
-  </div>
-
-  <div class="grid_8">
+  <div class="grid_2">
     <!--<a class='button' href='javascript:preFillData()'>test</a>-->
     &nbsp;
   </div>
 
+  <div class="grid_4 centeredimage">
+    <a class='button' href='javascript:saveQuestion()'>Save</a>    &nbsp;
+  </div>
+
+  
+
   
   
 
-  <div class="grid_2 centeredimage" >
-    <a class='button' id="nextButton" href='javascript:goToNext()'>Next</a>
+  <div class="grid_4 centeredimage" >
+    <a class='button' href='javascript:saveAndAddAnother()'>Save and Add New</a>
     &nbsp;
   </div>
   

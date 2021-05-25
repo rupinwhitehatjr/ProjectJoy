@@ -19,7 +19,7 @@ $(document).ready(function(){
 
 	params=getParams(window.location.href)
 
-	if(params.question==="5")
+	if(params.question==="10")
 	{
 		$("#nextButton").hide()
 	}
@@ -96,14 +96,14 @@ $(document).ready(function(){
 function getBaseKey()
 {
 	params=getParams(window.location.href)
-	key=params.level + "/"+params.class +"/"+params.question
+	key=params.level + "/"+params.day +"/"+params.question
 	return key
 }
 
 function updateField(additionalData)
 {
 		params=getParams(window.location.href)
-		key=params.level + "/"+params.class +"/"+params.question			
+		key=params.level + "/"+params.day +"/"+params.question			
 		key=key+ "/" +additionalData["id"]		
 		firebase.database().ref(key).set(additionalData["data"]);
 }
@@ -114,18 +114,19 @@ function fillPage()
 
 	console.log(params.level)
 	//console.log(params.version)
-	console.log(params.class)
+	console.log(params.day)
 	console.log(params.question)
 
 	$("#curriculum").html(params.level)
 	$("#QuestionNumber").html(params.question)
-	$("#class").html(params.class)
+	//console.log($("#day"))
+	$("span#day").html(params.day)
 
 	
 
 
 
-	key=params.level + "/"+params.class +"/"+params.question
+	key=params.level + "/"+params.day +"/"+params.question
 	
 	//console.log(key)
 	var questionData = firebase.database().ref(key);
@@ -138,6 +139,7 @@ function fillPage()
 		//console.log(existingValue)
 		if(!existingValue)
 		{
+			console.log("Not Found")
 			return;
 		}
 
